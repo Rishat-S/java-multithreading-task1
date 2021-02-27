@@ -2,6 +2,8 @@ package ru.netology;
 
 public class MyThread extends Thread {
 
+    public static final int DELAY_FOR_IMITATION_WORK = 2500;
+
     public MyThread(ThreadGroup threadGroup, String thName) {
         super(threadGroup, thName);
     }
@@ -10,7 +12,7 @@ public class MyThread extends Thread {
     public void run() {
         try {
             while (!isInterrupted()) {
-                Thread.sleep(2500);
+                Thread.sleep(DELAY_FOR_IMITATION_WORK);
                 System.out.printf("I am Thread %s", Thread.currentThread().getName() + ". Hello everyone!\n");
             }
         } catch (InterruptedException e) {

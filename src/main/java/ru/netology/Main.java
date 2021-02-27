@@ -1,6 +1,9 @@
 package ru.netology;
 
 public class Main {
+
+    public static final int DELAY_FOR_THREADS_EXEC = 15000;
+
     public static void main(String[] args) {
         ThreadGroup threadGroup = new ThreadGroup("thread group");
 
@@ -16,7 +19,7 @@ public class Main {
         mt4.start();
 
         try {
-            Thread.sleep(15000);
+            Thread.sleep(DELAY_FOR_THREADS_EXEC);
             threadGroup.interrupt();
             System.out.println("Terminating all threads.");
         } catch (InterruptedException e) {
