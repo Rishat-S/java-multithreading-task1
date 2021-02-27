@@ -3,12 +3,11 @@ package ru.netology;
 public class Main {
     public static void main(String[] args) {
         ThreadGroup threadGroup = new ThreadGroup("thread group");
-        Runnable th = new MyThread();
 
-        Thread mt1 = new Thread(threadGroup,th, "1");
-        Thread mt2 = new Thread(threadGroup,th, "2");
-        Thread mt3 = new Thread(threadGroup,th, "3");
-        Thread mt4 = new Thread(threadGroup,th, "4");
+        Thread mt1 = new MyThread(threadGroup, "1");
+        Thread mt2 = new MyThread(threadGroup, "2");
+        Thread mt3 = new MyThread(threadGroup, "3");
+        Thread mt4 = new MyThread(threadGroup, "4");
 
         System.out.println("Creating Threads...");
         mt1.start();

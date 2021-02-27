@@ -1,11 +1,15 @@
 package ru.netology;
 
-public class MyThread implements Runnable {
+public class MyThread extends Thread {
+
+    public MyThread(ThreadGroup threadGroup, String thName) {
+        super(threadGroup, thName);
+    }
 
     @Override
     public void run() {
         try {
-            while (true) {
+            while (!isInterrupted()) {
                 Thread.sleep(2500);
                 System.out.printf("I am Thread %s", Thread.currentThread().getName() + ". Hello everyone!\n");
             }
