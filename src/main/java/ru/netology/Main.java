@@ -14,7 +14,7 @@ public class Main {
         Thread mt3 = new MyThread(threadGroup, "3");
         Thread mt4 = new MyThread(threadGroup, "4");
 
-        System.out.println("Creating Threads...");
+        System.out.println("Creating threads...");
         mt1.start();
         mt2.start();
         mt3.start();
@@ -27,7 +27,7 @@ public class Main {
             mt2.join();
             mt3.join();
             mt4.join();
-            System.out.println("Terminating all threads.");
+            System.out.println("All threads completed.");
             threadGroup.destroy();
         } catch (InterruptedException e) {
             e.printStackTrace();

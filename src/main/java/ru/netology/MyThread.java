@@ -18,7 +18,7 @@ public class MyThread extends Thread {
                 System.out.printf("I am Thread %s", Thread.currentThread().getName() + ". Hello everyone!\n");
             }
         } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
+//            System.out.println(e.getMessage());
         } finally {
             System.out.printf("Thread %s ended.\n", Thread.currentThread().getName());
         }
