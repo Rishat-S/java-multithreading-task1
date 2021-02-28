@@ -1,8 +1,10 @@
 package ru.netology;
 
+import java.util.concurrent.TimeUnit;
+
 public class MyThread extends Thread {
 
-    public static final int DELAY_FOR_IMITATION_WORK = 2500;
+    public static final long DELAY_FOR_IMITATION_WORK = 2;
 
     public MyThread(ThreadGroup threadGroup, String thName) {
         super(threadGroup, thName);
@@ -12,7 +14,7 @@ public class MyThread extends Thread {
     public void run() {
         try {
             while (!isInterrupted()) {
-                Thread.sleep(DELAY_FOR_IMITATION_WORK);
+                TimeUnit.SECONDS.sleep(DELAY_FOR_IMITATION_WORK);
                 System.out.printf("I am Thread %s", Thread.currentThread().getName() + ". Hello everyone!\n");
             }
         } catch (InterruptedException e) {

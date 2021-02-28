@@ -1,8 +1,10 @@
 package ru.netology;
 
+import java.util.concurrent.TimeUnit;
+
 public class Main {
 
-    public static final int DELAY_FOR_THREADS_EXEC = 15000;
+    public static final int DELAY_FOR_THREADS_EXEC = 10;
 
     public static void main(String[] args) {
         ThreadGroup threadGroup = new ThreadGroup("thread group");
@@ -19,9 +21,14 @@ public class Main {
         mt4.start();
 
         try {
-            Thread.sleep(DELAY_FOR_THREADS_EXEC);
+            TimeUnit.SECONDS.sleep(DELAY_FOR_THREADS_EXEC);
             threadGroup.interrupt();
+            mt1.join();
+            mt2.join();
+            mt3.join();
+            mt4.join();
             System.out.println("Terminating all threads.");
+            threadGroup.destroy();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
